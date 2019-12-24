@@ -1,0 +1,21 @@
+version: '2'
+services:
+ education-post:
+    image: postgres
+    container_name: comment-analysis-postgres
+    hostname: comment-analysis-postgres
+    environment:
+      POSTGRES_DB: media_comments
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass123!
+    ports:
+      - "5432:5432"
+ modgodb-example:
+   image: 'mongo'
+   container_name: 'mongodb-anatoliy'
+   environment:
+     - MONGO_INITDB_DATABASE=mongo_db_anatoliy
+     - MONGO_INITDB_ROOT_USERNAME=anatoliy
+     - MONGO_INITDB_ROOT_PASSWORD=password
+   ports:
+     - '27017:27017'
